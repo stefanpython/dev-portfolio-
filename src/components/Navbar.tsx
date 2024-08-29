@@ -1,0 +1,113 @@
+import { useState } from "react";
+
+export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+
+  return (
+    <div className="relative">
+      {/* Navbar */}
+      <div className="navbar bg-base-100 border-b border-gray-700">
+        <div className="flex-1">
+          <a className="btn btn-ghost text-xl">daisyUI</a>
+        </div>
+        <div className="flex-none lg:hidden md:hidden">
+          <button onClick={toggleMenu} className="btn btn-square btn-ghost">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+        <div className="nav-links hidden md:flex lg:flex flex-none">
+          <ul className="menu menu-horizontal px-1 items-center ">
+            <li>
+              <a href="" className="hover:text-accent">
+                <span className="text-accent">01.</span> About
+              </a>
+            </li>
+            <li>
+              <a href="" className="hover:text-accent">
+                <span className="text-accent">02.</span> Projects
+              </a>
+            </li>
+            <li>
+              <a href="" className="hover:text-accent">
+                <span className="text-accent">03.</span> Skills
+              </a>
+            </li>
+            <li>
+              <a href="" className="hover:text-accent">
+                <span className="text-accent">04.</span> Contact
+              </a>
+            </li>
+
+            <button
+              className="p-2 rounded-sm btn-outline border border-accent text-accent text-xs
+     transform transition-transform duration-300 hover:scale-110 
+    hover:origin-right hover:bg-transparent hover:text-accent hover:border-accent hover:shadow-md hover:shadow-accent/100"
+            >
+              Resume
+            </button>
+          </ul>
+        </div>
+      </div>
+
+      {/* Sidebar Menu */}
+      <div
+        className={`fixed inset-0 bg-base-300 transform ${
+          isOpen ? "-translate-x-0" : "translate-x-full"
+        } transition-transform duration-300 ease-in-out lg:hidden`}
+      >
+        <button
+          onClick={toggleMenu}
+          className="absolute top-4 right-4 p-2 text-xl"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        <div className="nav-links flex flex-col items-center mt-16 space-y-4">
+          <a href="" className="text-lg hover:text-accent" onClick={toggleMenu}>
+            <span className="text-accent">01.</span> About
+          </a>
+          <a href="" className="text-lg hover:text-accent" onClick={toggleMenu}>
+            <span className="text-accent">02.</span> Projects
+          </a>
+          <a href="" className="text-lg hover:text-accent" onClick={toggleMenu}>
+            <span className="text-accent">03.</span> Skills
+          </a>
+          <a href="" className="text-lg hover:text-accent" onClick={toggleMenu}>
+            <span className="text-accent">04.</span> Contact
+          </a>
+
+          <button
+            className="p-2 rounded-sm btn-outline border border-accent text-accent text-xs
+     transform transition-transform duration-300 hover:scale-110 
+    hover:origin-right hover:bg-transparent hover:text-accent hover:border-accent hover:shadow-md hover:shadow-accent/100"
+          >
+            Resume
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
