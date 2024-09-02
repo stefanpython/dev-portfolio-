@@ -28,7 +28,7 @@ export default function Navbar() {
             </svg>
           </button>
         </div>
-        <div className="nav-links hidden md:flex lg:flex flex-none">
+        <div className="nav-links hidden md:flex lg:flex pr-8">
           <ul className="menu menu-horizontal px-1 items-center ">
             <li>
               <a href="" className="hover:text-accent">

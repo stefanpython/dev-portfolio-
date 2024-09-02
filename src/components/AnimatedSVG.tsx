@@ -24,7 +24,7 @@ const AnimatedSVG = () => {
       viewBox="0 0 1273 906"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="lg:w-[450px] w-full h-full"
+      className="lg:w-[450px] max-w-[400px]"
       ref={ref}
     >
       <defs>
