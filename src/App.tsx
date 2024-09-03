@@ -2,6 +2,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import AnimatedSVG from "./components/AnimatedSVG";
 import Welcome from "./components/Welcome";
+import About from "./components/About";
 
 function App() {
   return (
