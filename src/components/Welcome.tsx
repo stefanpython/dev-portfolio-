@@ -7,7 +7,7 @@ export default function Welcome() {
         className="text-accent pb-5"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 1.5, delay: 1 }}
       >
         Hi, my name is
       </motion.p>
@@ -16,7 +16,7 @@ export default function Welcome() {
         className="welcome-name font-semibold text-4xl sm:text-6xl lg:text-7xl"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.5 }}
+        transition={{ duration: 0.5, delay: 1.5 }}
       >
         Stefan Andrei.
       </motion.h1>
@@ -25,7 +25,7 @@ export default function Welcome() {
         className="max-w-[700px] pb-5"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 1 }}
+        transition={{ duration: 0.5, delay: 2 }}
       >
         <h1 className="font-semibold text-4xl sm:text-6xl lg:text-7xl">
           I develop robust and innovative solutions for the web.
@@ -36,7 +36,7 @@ export default function Welcome() {
         className="max-w-[500px]"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 1.4 }}
+        transition={{ duration: 0.5, delay: 2.4 }}
       >
         <p>
           I am a software developer specializing in both front-end and back-end

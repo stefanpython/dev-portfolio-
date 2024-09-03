@@ -1,9 +1,30 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
+
+  // Variants for animation
+  const linkVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: (index: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: index * 0.2, duration: 0.5 },
+    }),
+  };
+
+  // Variants for the Resume button
+  const buttonVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { delay: 0.8, duration: 0.5 },
+    },
+  };
 
   return (
     <div className="relative">
@@ -30,34 +51,29 @@ export default function Navbar() {
         </div>
         <div className="nav-links hidden md:flex lg:flex pr-8">
           <ul className="menu menu-horizontal px-1 items-center ">
-            <li>
-              <a href="" className="hover:text-accent">
-                <span className="text-accent">01.</span> About
-              </a>
-            </li>
-            <li>
-              <a href="" className="hover:text-accent">
-                <span className="text-accent">02.</span> Projects
-              </a>
-            </li>
-            <li>
-              <a href="" className="hover:text-accent">
-                <span className="text-accent">03.</span> Skills
-              </a>
-            </li>
-            <li>
-              <a href="" className="hover:text-accent">
-                <span className="text-accent">04.</span> Contact
-              </a>
-            </li>
-
-            <button
+            {["About", "Projects", "Skills", "Contact"].map((item, index) => (
+              <motion.li
+                key={item}
+                initial="hidden"
+                animate="visible"
+                variants={linkVariants}
+                custom={index}
+              >
+                <a href="" className="hover:text-accent">
+                  <span className="text-accent">{`0${index + 1}.`}</span> {item}
+                </a>
+              </motion.li>
+            ))}
+            <motion.button
               className="p-2 rounded-sm btn-outline border border-accent text-accent text-xs
-     transform transition-transform duration-300 hover:scale-110 
-    hover:origin-right hover:bg-transparent hover:text-accent hover:border-accent hover:shadow-md hover:shadow-accent/100"
+    transform transition-transform duration-300 hover:scale-110 
+   hover:origin-right hover:bg-transparent hover:text-accent hover:border-accent hover:shadow-md hover:shadow-accent/100"
+              initial="hidden"
+              animate="visible"
+              variants={buttonVariants}
             >
               Resume
-            </button>
+            </motion.button>
           </ul>
         </div>
       </div>
@@ -86,26 +102,30 @@ export default function Navbar() {
           </svg>
         </button>
         <div className="nav-links flex flex-col items-center mt-16 space-y-4">
-          <a href="" className="text-lg hover:text-accent" onClick={toggleMenu}>
-            <span className="text-accent">01.</span> About
-          </a>
-          <a href="" className="text-lg hover:text-accent" onClick={toggleMenu}>
-            <span className="text-accent">02.</span> Projects
-          </a>
-          <a href="" className="text-lg hover:text-accent" onClick={toggleMenu}>
-            <span className="text-accent">03.</span> Skills
-          </a>
-          <a href="" className="text-lg hover:text-accent" onClick={toggleMenu}>
-            <span className="text-accent">04.</span> Contact
-          </a>
-
-          <button
+          {["About", "Projects", "Skills", "Contact"].map((item, index) => (
+            <motion.a
+              key={item}
+              href=""
+              className="text-lg hover:text-accent"
+              onClick={toggleMenu}
+              initial="hidden"
+              animate="visible"
+              variants={linkVariants}
+              custom={index}
+            >
+              <span className="text-accent">{`0${index + 1}.`}</span> {item}
+            </motion.a>
+          ))}
+          <motion.button
             className="p-2 rounded-sm btn-outline border border-accent text-accent text-xs
-     transform transition-transform duration-300 hover:scale-110 
-    hover:origin-right hover:bg-transparent hover:text-accent hover:border-accent hover:shadow-md hover:shadow-accent/100"
+    transform transition-transform duration-300 hover:scale-110 
+   hover:origin-right hover:bg-transparent hover:text-accent hover:border-accent hover:shadow-md hover:shadow-accent/100"
+            initial="hidden"
+            animate="visible"
+            variants={buttonVariants}
           >
             Resume
-          </button>
+          </motion.button>
         </div>
       </div>
     </div>
