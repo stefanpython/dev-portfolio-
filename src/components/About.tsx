@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const AboutMe: React.FC = () => {
   return (
@@ -49,15 +50,40 @@ const AboutMe: React.FC = () => {
       </div>
 
       {/* Right Column */}
-      <div className="md:w-1/3 mt-8 md:mt-0 md:pl-8">
-        <div className="relative">
-          <img
+      <div className="md:w-1/3 md:mt-0 md:pl-8">
+        {/* Parent motion.div to manage hover state */}
+        <motion.div
+          className="relative"
+          whileHover={{
+            translateX: -8,
+            translateY: -8,
+          }}
+          transition={{ duration: 0.3 }}
+        >
+          {/* Border element */}
+          <motion.div
+            className="absolute top-0 left-0 -right-3 md:-right-6 -inset-4 border-2 border-accent rounded-lg"
+            initial={{ opacity: 1, x: 0, y: 0 }}
+            whileHover={{ opacity: 0, x: 8, y: 8 }}
+            transition={{ duration: 0.3 }}
+            style={{ zIndex: 1 }}
+          />
+
+          {/* Image element with filter effect */}
+          <motion.img
             src="./me.jpg"
             alt="Stefan Andrei"
-            className="max-w-[300px] h-auto rounded-md"
+            className="max-w-[280px] rounded-md mt-10 relative z-10"
+            initial={{ x: 0, y: 0 }}
+            whileHover={{ filter: "none", x: -8, y: -8 }}
+            transition={{ duration: 0.3 }}
+            style={{
+              zIndex: 2,
+              filter: "sepia(100%)",
+              transition: "filter 0.3s ease",
+            }}
           />
-          <div className="absolute inset-0 border-2 border-accent transform translate-x-4 translate-y-4"></div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
