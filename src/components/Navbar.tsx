@@ -31,7 +31,7 @@ export default function Navbar() {
       {/* Navbar */}
       <div className="navbar bg-base-100 border-b border-gray-700">
         <div className="flex-1">
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <a className="btn btn-ghost text-xl">SA</a>
         </div>
         <div className="flex-none lg:hidden md:hidden">
           <button onClick={toggleMenu} className="btn btn-square btn-ghost">

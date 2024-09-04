@@ -13,6 +13,10 @@ function App() {
         <Welcome />
         <AnimatedSVG />
       </div>
+
+      <div className="flex justify-center items-center mt-40 overflow-auto flex-col sm:flex-row">
+        <About />
+      </div>
     </>
   );
 }
