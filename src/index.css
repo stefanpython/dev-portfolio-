@@ -9,3 +9,15 @@
 .welcome-name {
   color: rgb(237, 247, 255);
 }
+
+.skills-icons div {
+  flex-direction: column;
+}
+
+.skills-icons i {
+  font-size: 50px;
+}
+
+.skills-icons p {
+  font-family: "Fira Code", "Roboto Mono", monospace;
+}

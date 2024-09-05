@@ -1,15 +1,26 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const AboutMe: React.FC = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
   return (
-    <section className="about-me-container flex flex-col md:flex-row items-center md:items-start p-8 text-white max-w-[60em]">
+    <motion.section
+      ref={ref}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
+      transition={{ duration: 0.7, delay: 0.3 }}
+      className="about-me-container flex flex-col md:flex-row items-center md:items-start p-8 text-white max-w-[60em]"
+    >
       {/* Left Column */}
       <div className="md:w-2/3">
         <div className="flex items-center space-x-2 text-accent text-lg mb-4">
           <span className="text-accent text-xl">01.</span>
           <h2 className="text-2xl font-bold">About Me</h2>
-          <div className="flex-grow border-t border-gray-700"></div>
+          <div className="flex-grow border-t border-gray-700 max-w-[18em]"></div>
         </div>
 
         <div>
@@ -85,7 +96,7 @@ const AboutMe: React.FC = () => {
           />
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

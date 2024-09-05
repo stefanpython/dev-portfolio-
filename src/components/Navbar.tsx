@@ -51,7 +51,7 @@ export default function Navbar() {
         </div>
         <div className="nav-links hidden md:flex lg:flex pr-8">
           <ul className="menu menu-horizontal px-1 items-center ">
-            {["About", "Projects", "Skills", "Contact"].map((item, index) => (
+            {["About", "Skills", "Projects", "Contact"].map((item, index) => (
               <motion.li
                 key={item}
                 initial="hidden"
@@ -102,7 +102,7 @@ export default function Navbar() {
           </svg>
         </button>
         <div className="nav-links flex flex-col items-center mt-16 space-y-4">
-          {["About", "Projects", "Skills", "Contact"].map((item, index) => (
+          {["About", "Skills", "Projects", "Contact"].map((item, index) => (
             <motion.a
               key={item}
               href=""
