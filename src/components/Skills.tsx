@@ -23,7 +23,7 @@ export default function Skills() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
         transition={{ duration: 0.7, delay: 0.3 }}
-        className="mt-48 flex flex-col md:flex-row md:items-start p-8 text-white max-w-[62em]"
+        className="mt-40 flex flex-col md:flex-row md:items-start p-8 text-white max-w-[62em]"
       >
         {/* Left Column */}
         <div>

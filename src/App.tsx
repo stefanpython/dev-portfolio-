@@ -5,12 +5,13 @@ import AnimatedSVG from "./components/AnimatedSVG";
 import Welcome from "./components/Welcome";
 import About from "./components/About";
 import Skills from "./components/Skills";
+import Projects from "./components/Projects";
 
 function App() {
   return (
     <>
       <Navbar />
-      <div className="flex justify-center items-center mt-40 overflow-auto flex-col sm:flex-row">
+      <div className="flex justify-center items-center mt-40 overflow-hidden flex-col sm:flex-row">
         <Welcome />
 
         <motion.div
@@ -22,10 +23,12 @@ function App() {
         </motion.div>
       </div>
 
-      <div className="flex justify-center items-center mt-48 overflow-auto flex-col">
+      <div className="flex justify-center items-center mt-48 overflow-hidden flex-col">
         <About />
 
         <Skills />
+
+        <Projects />
       </div>
     </>
   );
