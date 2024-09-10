@@ -47,6 +47,12 @@ export default function Projects() {
       image: "./food.png",
       link: "https://project3.com",
     },
+
+    {
+      title: "Forcast Finnese",
+      image: "./weather.png",
+      link: "https://project3.com",
+    },
     // Add more projects as needed
   ];
 
@@ -107,7 +113,7 @@ export default function Projects() {
       </div>
 
       {/* Right Column */}
-      <div className="mt-8 md:w-1/3 flex flex-col justify-center items-center md:mt-32">
+      <div className="mt-8 md:w-1/3 flex flex-col justify-center items-center md:mt-48">
         <motion.a
           href="#"
           className="text-lg font-bold"
