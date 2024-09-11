@@ -7,53 +7,57 @@ export default function Projects() {
       title: "Odinbook",
       image: "./odinbook.png",
       link: "https://project1.com",
+      description: "A social networking platform inspired by Facebook.",
     },
     {
       title: "Ecomm Express",
       image: "./ecom.png",
       link: "https://project2.com",
+      description:
+        "An e-commerce site with advanced filtering and search features.",
     },
     {
       title: "VMDB Movie App",
       image: "./movie.png",
       link: "https://project3.com",
+      description: "A movie database app with search and recommendations.",
     },
-
     {
       title: "Invoice Management System",
       image: "./invoice.png",
-      link: "https://project3.com",
+      link: "https://project4.com",
+      description: "A system for managing and generating invoices.",
     },
-
     {
       title: "Chat App",
       image: "./chat.png",
-      link: "https://project3.com",
+      link: "https://project5.com",
+      description: "A real-time chat application.",
     },
-
     {
       title: "Infinity Market",
       image: "./infinity.png",
-      link: "https://project3.com",
+      link: "https://project6.com",
+      description: "A marketplace app.",
     },
     {
       title: "Pomodoro",
       image: "./pomodoro.png",
-      link: "https://project3.com",
+      link: "https://project7.com",
+      description: "A productivity app using the Pomodoro technique.",
     },
-
     {
       title: "Culinary Crafts",
       image: "./food.png",
-      link: "https://project3.com",
+      link: "https://project8.com",
+      description: "A recipe app with cooking tips and meal planning.",
     },
-
     {
-      title: "Forcast Finnese",
+      title: "Forecast Finesse",
       image: "./weather.png",
-      link: "https://project3.com",
+      link: "https://project9.com",
+      description: "A weather app with detailed forecasts.",
     },
-    // Add more projects as needed
   ];
 
   const [ref, inView] = useInView({
@@ -102,20 +106,21 @@ export default function Projects() {
                 transition={{ duration: 0.3, ease: "easeInOut" }}
               />
               <motion.div
-                className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white text-lg font-bold rounded-lg"
+                className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center text-white text-lg font-bold rounded-lg p-4"
                 transition={{ duration: 0.3, ease: "easeInOut" }}
               >
-                {project.title}
+                <div className="mb-10 text-lg">{project.title}</div>
               </motion.div>
+              <p className="text-lg sm:text-sm">{project.description}</p>
             </motion.a>
           ))}
         </div>
       </div>
 
       {/* Right Column */}
-      <div className="mt-8 md:w-1/3 flex flex-col justify-center items-center md:mt-48">
+      <div className="mt-8 md:w-1/3 flex flex-col justify-center items-center md:mt-64">
         <motion.a
-          href="#"
+          href="https://github.com/stefanpython"
           className="text-lg font-bold"
           animate={{ scale: [1, 1.1, 1] }}
           transition={{
@@ -125,7 +130,8 @@ export default function Projects() {
             repeatType: "loop",
           }}
         >
-          &#xbb; More Here &#xab;
+          <span className="text-accent"> &#xbb;</span> More Here{" "}
+          <span className="text-accent">&#xab;</span>
         </motion.a>
       </div>
     </motion.section>
