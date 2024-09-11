@@ -101,7 +101,7 @@ export default function Projects() {
               <motion.img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-auto rounded-lg shadow-lg"
+                className="w-full h-auto rounded-md shadow-lg"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
               />

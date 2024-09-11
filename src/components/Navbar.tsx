@@ -51,19 +51,22 @@ export default function Navbar() {
         </div>
         <div className="nav-links hidden md:flex lg:flex pr-8">
           <ul className="menu menu-horizontal px-1 items-center ">
-            {["About", "Skills", "Projects", "Contact"].map((item, index) => (
-              <motion.li
-                key={item}
-                initial="hidden"
-                animate="visible"
-                variants={linkVariants}
-                custom={index}
-              >
-                <a href="" className="hover:text-accent">
-                  <span className="text-accent">{`0${index + 1}.`}</span> {item}
-                </a>
-              </motion.li>
-            ))}
+            {["About", "Skills", "Projects", "Credentials", "Contact"].map(
+              (item, index) => (
+                <motion.li
+                  key={item}
+                  initial="hidden"
+                  animate="visible"
+                  variants={linkVariants}
+                  custom={index}
+                >
+                  <a href="" className="hover:text-accent">
+                    <span className="text-accent">{`0${index + 1}.`}</span>{" "}
+                    {item}
+                  </a>
+                </motion.li>
+              )
+            )}
             <motion.button
               className="p-2 rounded-sm btn-outline border border-accent text-accent text-xs
     transform transition-transform duration-300 hover:scale-110 
@@ -102,20 +105,22 @@ export default function Navbar() {
           </svg>
         </button>
         <div className="nav-links flex flex-col items-center mt-16 space-y-4">
-          {["About", "Skills", "Projects", "Contact"].map((item, index) => (
-            <motion.a
-              key={item}
-              href=""
-              className="text-lg hover:text-accent"
-              onClick={toggleMenu}
-              initial="hidden"
-              animate="visible"
-              variants={linkVariants}
-              custom={index}
-            >
-              <span className="text-accent">{`0${index + 1}.`}</span> {item}
-            </motion.a>
-          ))}
+          {["About", "Skills", "Projects", "Credentials", "Contact"].map(
+            (item, index) => (
+              <motion.a
+                key={item}
+                href=""
+                className="text-lg hover:text-accent"
+                onClick={toggleMenu}
+                initial="hidden"
+                animate="visible"
+                variants={linkVariants}
+                custom={index}
+              >
+                <span className="text-accent">{`0${index + 1}.`}</span> {item}
+              </motion.a>
+            )
+          )}
           <motion.button
             className="p-2 rounded-sm btn-outline border border-accent text-accent text-xs
     transform transition-transform duration-300 hover:scale-110 
