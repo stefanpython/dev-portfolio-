@@ -20,6 +20,7 @@ function App() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 2.8 }}
+          className="w-full sm:w-3/4 md:w-1/2 lg:w-1/3 h-auto "
         >
           <AnimatedSVG />
         </motion.div>
