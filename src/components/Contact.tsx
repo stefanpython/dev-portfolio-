@@ -31,11 +31,11 @@ export default function Contact() {
     // Send email using EmailJS
     emailjs
       .send(
-        "service_wzx18e3", // Your EmailJS service ID
-        "template_gu1m78s", // Your EmailJS template ID
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         // @ts-ignore
-        formData, // Form data
-        "5OKWxP-JTHiDP_15E" // Your EmailJS user ID
+        formData,
+        import.meta.env.VITE_EMAILJS_USER_ID
       )
       .then(
         (response: any) => {
