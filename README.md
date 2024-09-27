@@ -2,6 +2,8 @@
 
 Welcome to Dev Portfolio V2! This project showcases my work and skills in web development.
 
+Live [DEMO](https://stefanpython.github.io/dev-portfolio/)
+
 ## Tech Stack
 
 - **React**: A JavaScript library for building user interfaces.
@@ -32,7 +34,7 @@ To get started with this project, follow these steps:
    npm start
    ```
 
-4. Open your browser and navigate to `http://localhost:3000` to see your portfolio in action!
+4. Open your browser and navigate to `http://localhost:5173` to see your portfolio in action!
 
 ## Features
 
