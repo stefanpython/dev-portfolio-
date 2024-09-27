@@ -16,20 +16,32 @@ export default function Contact() {
     threshold: 0.1,
   });
 
-  const [iconsVisible, setIconsVisible] = useState(false);
-
-  useEffect(() => {
-    if (inView) {
-      setIconsVisible(true);
-    }
-  }, [inView]);
-
-  // Form data state with types
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     message: "",
   });
+
+  // State for modal visibility and loading status
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [loadingText, setLoadingText] = useState("Sending your message");
+
+  useEffect(() => {
+    let interval: any;
+
+    if (loading) {
+      let count = 0;
+      interval = setInterval(() => {
+        count = (count + 1) % 4; // Cycle through 0 to 3
+        setLoadingText("Sending your message" + ".".repeat(count));
+      }, 500); // Update every 500ms
+    }
+
+    return () => {
+      if (interval) clearInterval(interval); // Clear interval on unmount or loading change
+    };
+  }, [loading]);
 
   // Handle input changes with typed event
   const handleChange = (
@@ -39,9 +51,13 @@ export default function Contact() {
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
   };
 
-  // Handle form submission with typed event
+  // Handle form submission
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    // Show modal immediately
+    setIsModalOpen(true);
+    setLoading(true); // Set loading to true
 
     // Send email using EmailJS
     emailjs
@@ -59,14 +75,16 @@ export default function Contact() {
         (err: any) => {
           console.log("FAILED...", err);
         }
-      );
-
-    // Reset form after submission
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-    });
+      )
+      .finally(() => {
+        setLoading(false); // Reset loading state after the email is sent
+        // Reset form after submission
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
+      });
   };
 
   return (
@@ -77,7 +95,7 @@ export default function Contact() {
       transition={{ duration: 0.7, delay: 0.3 }}
       className="mt-40 flex flex-col md:flex-row justify-center items-center md:items-start p-8 text-white max-w-[60em]"
     >
-      <div className="md:w-2/3 flex flex-col ">
+      <div className="md:w-2/3 flex flex-col">
         <div className="flex items-center space-x-2 text-accent text-lg mb-4">
           <div className="flex-grow border-t border-gray-700 max-w-[18em]"></div>
           <span className="text-accent text-xl">05.</span>
@@ -132,13 +150,36 @@ export default function Contact() {
             </label>
 
             <div className="flex justify-end pt-2">
-              <button className="btn  btn-success w-full" type="submit">
+              <button className="btn btn-success w-full" type="submit">
                 Send
               </button>
             </div>
           </form>
         </div>
       </div>
+
+      {/* Modal for feedback after form submission */}
+      {isModalOpen && (
+        <dialog
+          id="my_modal_5"
+          className="modal modal-bottom sm:modal-middle "
+          open
+        >
+          <div className="modal-box shadow-accent shadow-sm">
+            <h3 className="font-bold text-lg">Hello!</h3>
+            <p className="py-4">
+              {loading
+                ? loadingText
+                : "Thank you for your message! I'll get back to you soon."}
+            </p>
+            <div className="modal-action">
+              <button className="btn" onClick={() => setIsModalOpen(false)}>
+                Close
+              </button>
+            </div>
+          </div>
+        </dialog>
+      )}
     </motion.section>
   );
 }
