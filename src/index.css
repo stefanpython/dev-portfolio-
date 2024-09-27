@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 .welcome-container {
   font-family: "Fira Code", "Roboto Mono", monospace;
 }

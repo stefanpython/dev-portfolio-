@@ -65,13 +65,17 @@ export default function Navbar() {
                   variants={linkVariants}
                   custom={index}
                 >
-                  <a href="" className="hover:text-accent">
+                  <a
+                    href={`#${item.toLowerCase()}`}
+                    className="hover:text-accent"
+                  >
                     <span className="text-accent">{`0${index + 1}.`}</span>{" "}
                     {item}
                   </a>
                 </motion.li>
               )
             )}
+
             <motion.a
               href="https://flowcv.com/resume/g0gns4d4cc"
               target="_blank"
@@ -115,20 +119,23 @@ export default function Navbar() {
         <div className="nav-links flex flex-col items-center mt-16 space-y-4">
           {["About", "Skills", "Projects", "Credentials", "Contact"].map(
             (item, index) => (
-              <motion.a
+              <motion.li
                 key={item}
-                href=""
-                className="text-lg hover:text-accent"
-                onClick={toggleMenu}
                 initial="hidden"
                 animate="visible"
                 variants={linkVariants}
                 custom={index}
               >
-                <span className="text-accent">{`0${index + 1}.`}</span> {item}
-              </motion.a>
+                <a
+                  href={`#${item.toLowerCase()}`}
+                  className="hover:text-accent"
+                >
+                  <span className="text-accent">{`0${index + 1}.`}</span> {item}
+                </a>
+              </motion.li>
             )
           )}
+
           <motion.a
             href="https://flowcv.com/resume/g0gns4d4cc"
             target="_blank"
