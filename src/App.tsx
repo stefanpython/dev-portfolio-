@@ -1,5 +1,7 @@
+// src/App.js
 import "./App.css";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import AnimatedSVG from "./components/AnimatedSVG";
 import Welcome from "./components/Welcome";
@@ -9,8 +11,23 @@ import Projects from "./components/Projects";
 import Credentials from "./components/Credentials";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Loading from "./components/Loading";
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
+
   return (
     <>
       <Navbar />
@@ -21,7 +38,7 @@ function App() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 2.8 }}
-          className="w-full sm:w-3/4 md:w-1/2 lg:w-1/3 h-auto "
+          className="w-full sm:w-3/4 md:w-1/2 lg:w-1/3 h-auto"
         >
           <AnimatedSVG />
         </motion.div>
