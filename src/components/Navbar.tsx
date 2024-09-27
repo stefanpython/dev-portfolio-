@@ -72,16 +72,19 @@ export default function Navbar() {
                 </motion.li>
               )
             )}
-            <motion.button
+            <motion.a
+              href="https://flowcv.com/resume/g0gns4d4cc"
+              target="_blank"
+              rel="noopener noreferrer"
               className="p-2 rounded-sm btn-outline border border-accent text-accent text-xs
-    transform transition-transform duration-300 hover:scale-110 
-   hover:origin-right hover:bg-transparent hover:text-accent hover:border-accent hover:shadow-md hover:shadow-accent/100"
+             transform transition-transform duration-300 hover:scale-110 
+             hover:origin-right hover:bg-transparent hover:text-accent hover:border-accent hover:shadow-md hover:shadow-accent/100"
               initial="hidden"
               animate="visible"
               variants={buttonVariants}
             >
               Resume
-            </motion.button>
+            </motion.a>
           </ul>
         </div>
       </div>
@@ -126,16 +129,19 @@ export default function Navbar() {
               </motion.a>
             )
           )}
-          <motion.button
+          <motion.a
+            href="https://flowcv.com/resume/g0gns4d4cc"
+            target="_blank"
+            rel="noopener noreferrer"
             className="p-2 rounded-sm btn-outline border border-accent text-accent text-xs
-    transform transition-transform duration-300 hover:scale-110 
-   hover:origin-right hover:bg-transparent hover:text-accent hover:border-accent hover:shadow-md hover:shadow-accent/100"
+             transform transition-transform duration-300 hover:scale-110 
+             hover:origin-right hover:bg-transparent hover:text-accent hover:border-accent hover:shadow-md hover:shadow-accent/100"
             initial="hidden"
             animate="visible"
             variants={buttonVariants}
           >
             Resume
-          </motion.button>
+          </motion.a>
         </div>
       </div>
     </div>
