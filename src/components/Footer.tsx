@@ -6,7 +6,8 @@ export default function Footer() {
       <aside className="flex justify-center items-center space-x-4">
         <div>
           <p>
-            Copyright © {new Date().getFullYear()} - Created with love by Stefan
+            Copyright © {new Date().getFullYear()} - Created with{" "}
+            <span className="text-red-500 text-xl">&hearts;</span> by Stefan
             Andrei
           </p>
         </div>
