@@ -57,6 +57,7 @@ export default function Skills() {
                     label: "TypeScript",
                   },
                   { icon: "devicon-react-plain colored", label: "React" },
+                  { icon: "devicon-nextjs-original-wordmark", label: "NextJS" },
                   {
                     icon: "devicon-reactrouter-plain-wordmark colored",
                     label: "React Router",
