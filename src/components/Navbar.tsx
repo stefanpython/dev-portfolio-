@@ -129,6 +129,9 @@ export default function Navbar() {
                 <a
                   href={`#${item.toLowerCase()}`}
                   className="hover:text-accent"
+                  onClick={() => {
+                    toggleMenu(); // Close the menu on click
+                  }}
                 >
                   <span className="text-accent">{`0${index + 1}.`}</span> {item}
                 </a>
@@ -146,6 +149,9 @@ export default function Navbar() {
             initial="hidden"
             animate="visible"
             variants={buttonVariants}
+            onClick={() => {
+              toggleMenu(); // Close the menu on click
+            }}
           >
             Resume
           </motion.a>

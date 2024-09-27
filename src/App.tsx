@@ -36,28 +36,28 @@ function App() {
 
       <div
         id="skills"
-        className="flex justify-center items-center mt-20 overflow-hidden flex-col"
+        className="flex justify-center items-center mt-4 overflow-hidden flex-col"
       >
         <Skills />
       </div>
 
       <div
         id="projects"
-        className="flex justify-center items-center mt-20 overflow-hidden flex-col"
+        className="flex justify-center items-center mt-4 overflow-hidden flex-col"
       >
         <Projects />
       </div>
 
       <div
         id="credentials"
-        className="flex justify-center items-center mt-20 overflow-hidden flex-col"
+        className="flex justify-center items-center mt-4 overflow-hidden flex-col"
       >
         <Credentials />
       </div>
 
       <div
         id="contact"
-        className="flex justify-center items-center mt-20 overflow-hidden flex-col"
+        className="flex justify-center items-center mt-4 overflow-hidden flex-col"
       >
         <Contact />
       </div>
