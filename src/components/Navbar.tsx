@@ -32,7 +32,7 @@ export default function Navbar() {
       <div className="navbar bg-base-100 border-b border-gray-700">
         <div className="flex-1">
           <a
-            href="/"
+            href="/dev-portfolio"
             className="btn btn-ghost text-xl border border-accent rounded-full"
           >
             SA
