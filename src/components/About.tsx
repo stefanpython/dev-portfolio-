@@ -39,6 +39,14 @@ const AboutMe: React.FC = () => {
           </p>
 
           <p className="my-4">
+            Recently, I completed a{" "}
+            <span className="text-accent">3-month internship</span> at{" "}
+            <span className="text-accent">FlowerWork</span>, where I gained
+            hands-on experience in real-world projects and further enhanced my
+            development skills.
+          </p>
+
+          <p className="my-4">
             My academic achievements include completing{" "}
             <span className="text-accent">Harvard's CS50x</span> and{" "}
             <span className="text-accent">CS50w</span> courses, which provided

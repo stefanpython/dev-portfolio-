@@ -35,11 +35,39 @@ export default function Credentials() {
             <span className="text-accent text-xl">04.</span>
             <h2 className="text-2xl font-bold">Credentials</h2>
           </div>
-
+          {/* grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:flex justify-end gap-8 */}
           <div>
             <ul>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:flex justify-end gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:flex lg:flex-wrap justify-end gap-8">
                 {/* Icons and Text */}
+
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{
+                    opacity: iconsVisible ? 1 : 0,
+                    scale: iconsVisible ? 1 : 0.8,
+                  }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  className="text-center items-center flex flex-col"
+                >
+                  <a
+                    href="https://drive.google.com/file/d/1jvtq6Nztp-KE9lwAlHzYhtiDq1RTvnE_/view?usp=sharing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <motion.img
+                      src="./flowerworkCertificate.png"
+                      alt="Flowework Certificate"
+                      className="w-56 h-32 rounded-md"
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ duration: 0.3 }}
+                    />
+                  </a>
+                  <p className="mt-2 text-sm max-w-[12em]">
+                    FlowerWork Internship
+                  </p>
+                </motion.div>
+
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{
