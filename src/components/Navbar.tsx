@@ -27,7 +27,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="relative sticky top-0">
+    <div className="relative sticky top-0 z-10">
       {/* Navbar */}
       <div className="navbar bg-base-100 border-b border-gray-700">
         <div className="flex-1">
